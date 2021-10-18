@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <title>La Reserva en el Mar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="contacto.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="menu-nav">
+            <a href="index.html" class="logo nav-link">
+                <img src="./assets/Copia de logo.png" alt="logo" class="img-logo">
+            </a>
+            <button class="boton" aria-label="abrir menu">
+                <span class="iconify" data-icon="bytesize:menu"></span>
+            </button>
+            <ul class="menu-ul">
+                <li class="nav-menu-item"><a href="index.html" class="nav-menu-link nav-link">Caracteristicas</a></li>
+                <li class="nav-menu-item"><a href="contacto.html" class="nav-menu-link_active nav-link">Reserva</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="st-c">Contacto</h1>
+        <form id= "form1" class="form-contact">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required class="nombre">
+            <label for="email">Correo electronico</label>
+            <input type="email" id="email" name="email" required class="email">			
+            <label for="comment">Dejanos tu consulta</label>
+            <textarea name="comment" id="comment" required class="consulta"></textarea>
+            <button type="submit" class="btn-contacto btn-pri">Enviar</button>
+        </form>
+    </main>
+
+  
+    <footer>
+        <section>
+            <div class="redes">
+                <a href="https://www.facebook.com/lareservaenelmarpuertopiramides" class="menulink"><span class="iconify" data-icon="brandico:facebook-rect" data-inline="false"></span></a>
+                <a href="https://www.instagram.com/lareservaenelmar/?hl=es" class="menulink"><span class="iconify" data-icon="akar-icons:instagram-fill" data-inline="false"></span></a>
+                <a href="https://api.whatsapp.com/send?phone=542804562687&text=Hola,%20%C2%BFen%20qu%C3%A9%20podemos%20ayudarte?" class="menulink"><span class="iconify" data-icon="akar-icons:whatsapp-fill" data-inline="false"></span></a>
+                <a href="mailito:cabanasenelmar@gmail.com" class="menulink"><span class="iconify" data-icon="ci:mail" data-inline="false"></span></a></li>
+            </div>
+        </section>
+        <a href="index.html" class="logo-footer nav-link">
+            <img src="./assets/Copia de logo.png" alt="logo" class="footer-logo">
+        </a>
+    </footer>    
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
