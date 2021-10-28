@@ -1,12 +1,5 @@
 let url = "http://127.0.0.1:5501/info.json";
 
-
-//SALUDO INICIAL
-var nombreHome = prompt("Ingrese su nombre ");
-var saludo = "Bienvenido " + nombreHome + ", un placer!";
-
-alert(saludo);
-
 //CARACTERISTICAS
 $(".caract1").click(()=>{
     $(".desc1").slideToggle();
@@ -17,8 +10,10 @@ $(".caract2").click(()=>{
 });
 
 //AJAX
+
 let flag = false
 $(".reserva1").click(() =>{
+
     if(flag){
         $.get(url, function(rta, estado){
             if (estado === "success"){
