@@ -1,48 +1,35 @@
-let url = "http://127.0.0.1:5500/info.json";
+let url = "http://127.0.0.1:5501/info.json";
 
-$("#caract1").click(()=>{
-    $("#desc1").slideToggle();
+
+//SALUDO INICIAL
+var nombreHome = prompt("Ingrese su nombre ");
+var saludo = "Bienvenido " + nombreHome + ", un placer!";
+
+alert(saludo);
+
+//CARACTERISTICAS
+$(".caract1").click(()=>{
+    $(".desc1").slideToggle();
 });
 
-$("#caract2").click(()=>{
-    $("#desc2").slideToggle();
+$(".caract2").click(()=>{
+    $(".desc2").slideToggle();
 });
-
-/*
-let flag = false
-$("#reserva1").click(() => {
-    if (flag){
-        $("#precio1").fadeIn();
-
-    }else {
-        $("#precio1").fadeOut();
-    }
-    flag = !flag;
-});
-
-let flag2 = false
-$("#reserva2").click(() => {
-    if (flag2){
-        $("#precio2").fadeIn();
-
-    }else {
-        $("#precio2").fadeOut();
-    }
-    flag2 = !flag2;
-});
-*/
 
 //AJAX
 let flag = false
-$("#reserva1").click(() =>{
+$(".reserva1").click(() =>{
     if(flag){
         $.get(url, function(rta, estado){
             if (estado === "success"){
+                //para que se muestre una sola vez, y no se sume la info cada vez que se apreta el botón
+                $(".precio1").html("")
                 let datos = rta;
                 for (const dato of datos){
-                    $("#precio1").prepend(`
-                        <p>${dato.tipo}</p>
-                        <p${dato.precio}</p>
+                    $(".precio1").prepend(`
+                        <p>Tipo: ${dato.tipo}</p>
+                        <p>Precio: ${dato.precio}</p>
+                        <hr>
                     `);
                 };
             };
@@ -50,10 +37,10 @@ $("#reserva1").click(() =>{
             console.log(estado);
         });
 
-        $("#precio1").fadeIn();
+        $(".precio1").fadeIn();
     
     }else {
-        $("#precio1").fadeOut();
+        $(".precio1").fadeOut();
     };
     flag = !flag;
 
@@ -61,15 +48,18 @@ $("#reserva1").click(() =>{
 
 let flag2 = false
 
-$("#reserva2").click(() =>{
+
+$(".reserva2").click(() =>{
     if (flag2){
         $.get(url, function(rta, estado){
             if (estado === "success"){
+                $(".precio2").html("")
                 let datos = rta;
                 for (const dato of datos){
-                    $("#precio2").prepend(`
-                        <p>${dato.tipo}</p>
-                        <p${dato.precio}</p>
+                    $(".precio2").prepend(`
+                        <p>Tipo: ${dato.tipo}</p>
+                        <p>Precio: ${dato.precio}</p>
+                        <hr>
                     `);
                 };
                
@@ -78,12 +68,11 @@ $("#reserva2").click(() =>{
             console.log(estado);
         });
 
-        $("#precio2").fadeIn();
+        $(".precio2").fadeIn();
         
     }else {
-        $("#precio2").fadeOut();
+        $(".precio2").fadeOut();
     };
     flag2 = !flag2;
-    
 });
 
